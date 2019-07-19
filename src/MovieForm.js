@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class MovieForm extends Component {
+  state = {
+    text: ""
+  };
+
   render() {
+    const { submitForm } = this.props;
+    const { text } = this.state;
     return (
       <div>
-        <form data-testid="movie-form">
+        <form data-testid="movie-form" onSubmit={() => submitForm({ text })}>
           <input type="text" />
-          <button type="button">
-Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
