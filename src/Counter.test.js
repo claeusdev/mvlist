@@ -11,10 +11,9 @@ test('<Counter />', () => {
   const counterButton = getByTestId('counter-button');
   expect(counterButton.tagName).toBe('BUTTON');
 
-  fireEvent.click(counterButton)
+  fireEvent.click(counterButton);
   expect(counterButton.textContent).toBe('1');
 
   fireEvent.click(counterButton);
   expect(counterButton.textContent).toBe('2');
-
 });
